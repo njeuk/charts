@@ -133,7 +133,7 @@ master:
   # Set min/max heap here if needed with:
   # javaOpts: "-Xms512m -Xmx512m"
   # jenkinsOpts: ""
-  # jenkinsUrl: ""
+  jenkinsUrl: "j.comdevelopment.com"
   # If you set this prefix and use ingress controller then you might want to set the ingress path below
   # jenkinsUriPrefix: "/jenkins"
   # Enable pod security context (must be `true` if runAsUser or fsGroup are set)
@@ -231,6 +231,8 @@ master:
     - credentials-binding:1.23
     - git:4.2.2
     - configuration-as-code:1.41
+    - bitbucket:1.1.11
+    - cloudbees-bitbucket-branch-source:2.9.0
 
   # List of plugins to install in addition to those listed in master.installPlugins
   additionalPlugins: []
@@ -599,7 +601,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass:
+  storageClass: longhorn
   annotations: {}
   accessMode: "ReadWriteOnce"
   size: "8Gi"
